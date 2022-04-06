@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#cpm_live_value .currency-convertor {
+  background: #c3c8ed;
+  border: 2px solid blue;
+}
+.input_design {
+  font-weight: 700;
+  font-size: 20px;
+  border: 1px solid black;
+  padding: 5px;
+  color: #be9d38;
+  text-align: center;
+
+}
+input[type="number"] {
+  padding: 5px;
+  text-align: center;
+}
+.amount {
+  font-size: 14px;
+  font-weight: 600;
+}
+div#cpm_evolution {
+  background: black;
+  color: white;
+  border: 2px solid #bf9000;
+  border-radius: 5px;
+}
+.coin_form.mb-5.m-auto.w-100.text-center p {
+  background: #bf8f00;
+  color: black;
+  padding: 4px 0px;
+}
+
+h4.pt-3 {
+  font-weight: 700;
+}
+
+h5 {
+  font-weight: bold;
+  font-size: 16px;
+  color: gray;
+}
+
+input[type="text"] {
+  border: 1px solid #bf9000;
+  padding: 4px 11px;
+  color: #be9d38;
+  font-weight: 700;
+  text-align: right;
+  font-size: 18px;
+  width: 260px;
+  margin-right: auto;
+}
+
+.amount-h {
+  margin-left: -9px;
+  background: white;
+  color: #be9d38;
+  padding: 9px 1px;
+  border-radius: 3px;
+  text-align: right;
+  padding-right: 17px;
+  font-weight: 700;
+  text-align: right;
+  font-size: 18px;
+  background-color: #757171;
+  width: 260px;
+  margin-right: auto;
+}
+.usd_cpm {
+  background: #757171;
+  width: 214px;
+  padding: 5px;
+  border-radius: 3px;
+  color: #0cb050;
+  margin: auto;
+}
+.proc {
+  font-weight: bold;
+  font-size: 20px;
+  color: gray;
+}
+@media only screen and (max-width: 770px){
+	input.form-control {width: 100%;}
+  .amount-h {
+    width: 100%;
+  }
+  .amount-h{
+    margin-left: -6px;
+  }
+}
+.main{
+  font-weight: 700;
+}
+input[type="number"] {font-weight: 700;color: #2323ab;}
