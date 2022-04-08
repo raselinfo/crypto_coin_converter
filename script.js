@@ -2,7 +2,7 @@
 const { useState, useEffect } = React;
 
 const LiveValue = () => {
-  const CPM_VALUE = 0.1356226
+  const [CPM_VALUE, setCPMValue] = useState(0)
 
   const [formValue, setFormValue] = useState(0);
   const [cpmIncrease, setCpmIncrease] = useState(1000);
@@ -38,6 +38,7 @@ const LiveValue = () => {
         // Todo: if match ETH
         if (item.symbol.toUpperCase() === "ETH") {
           setETH(price)
+          setCPMValue(price / 25000)
         }
 
         // Todo: if match BNB
@@ -53,6 +54,7 @@ const LiveValue = () => {
 
     });
   }, [currentState])
+
 
   // Todo: Calculate Crypto Conversion
   useEffect(() => {
@@ -95,6 +97,20 @@ const LiveValue = () => {
     // Check: if match BTC-CPM
     if (currentState === "BTC-CPM") {
       btcToCPM()
+    }
+
+    // Check: if match BNB-USD
+    if (currentState === "BNB-USD") {
+      bnbToUSD()
+    }
+
+    // Check: if match BNB-CPM
+    if (currentState === "BNB-CPM") {
+      bnbToCPM()
+    }
+    // Check: if match BNB-CPM
+    if (currentState === "USD-CPM") {
+      usdToCPM()
     }
 
   }, [currentState, formValue])
@@ -159,6 +175,26 @@ const LiveValue = () => {
     setCurrentAmount(result)
   }
 
+  // bnbToUSD
+  function btcToUSD() {
+    let result = BNB * Number(formValue)
+    setCurrentAmount(result)
+  }
+
+  // bnbToCPM
+  function bnbToCPM() {
+    let BNB_USD = BNB * Number(formValue)
+    let GET_CPM_BY_ONE_USD = 1 / Number(CPM_VALUE)
+    let result = BNB_USD * GET_CPM_BY_ONE_USD
+    setCurrentAmount(result)
+  }
+
+  // usdToCPM
+  function usdToCPM() {
+    let result = CPM_VALUE * Number(formValue)
+    setCurrentAmount(result)
+  }
+
   return (
     <section id="cpm_live_value" style={{ maxWidth: "750px", margin: "auto" }}>
       <div className="container">
@@ -195,7 +231,11 @@ const LiveValue = () => {
                     <option value="ETH-CPM">ETH-CPM</option>
                     <option value="BTC-USD">BTC-USD</option>
                     <option value="BTC-CPM">BTC-CPM</option>
-                    
+
+                    <option value="BTC-CPM">BNB-USD</option>
+                    <option value="BTC-CPM">BNB-CPM</option>
+                    <option value="BTC-CPM">USD-CPM</option>
+
                   </select>
 
 
@@ -239,8 +279,6 @@ const LiveValue = () => {
           </div>
         </div>
       </div>
-
-
 
       {/* ------------ISecond Part----------- */}
 
