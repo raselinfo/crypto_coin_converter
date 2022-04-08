@@ -128,6 +128,7 @@ const LiveValue = () => {
   // cpmToUSD
   function cpmToUSD() {
     let result = CPM_VALUE * Number(formValue)
+    console.log(result)
     setCurrentAmount(result)
   }
 
@@ -176,7 +177,7 @@ const LiveValue = () => {
   }
 
   // bnbToUSD
-  function btcToUSD() {
+  function bnbToUSD() {
     let result = BNB * Number(formValue)
     setCurrentAmount(result)
   }
@@ -192,6 +193,7 @@ const LiveValue = () => {
   // usdToCPM
   function usdToCPM() {
     let result = CPM_VALUE * Number(formValue)
+    console.log(result)
     setCurrentAmount(result)
   }
 
@@ -232,9 +234,9 @@ const LiveValue = () => {
                     <option value="BTC-USD">BTC-USD</option>
                     <option value="BTC-CPM">BTC-CPM</option>
 
-                    <option value="BTC-CPM">BNB-USD</option>
-                    <option value="BTC-CPM">BNB-CPM</option>
-                    <option value="BTC-CPM">USD-CPM</option>
+                    <option value="BNB-USD">BNB-USD</option>
+                    <option value="BNB-CPM">BNB-CPM</option>
+                    <option value="USD-CPM">USD-CPM</option>
 
                   </select>
 
